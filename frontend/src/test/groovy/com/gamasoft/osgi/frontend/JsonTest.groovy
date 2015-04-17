@@ -22,9 +22,9 @@ class JsonTest extends GroovyTestCase {
 
     void testJsonSerialization() {
 
-        def expensiveConf = new MyConf(resourceName: "bigconf", title: "big conference", partecipants: 1000, start: new SimpleDateFormat("yyyy-MMM-dd").parse("2013-JUN-25"), price: 1500.0)
+        def expensiveConf = new MyConf(resourceName: "bigconf", title: "big conference", partecipants: 1000, start: new SimpleDateFormat("yyyy-MMM-dd", Locale.UK).parse("2013-JUN-25"), price: 1500.0)
 
-        def expectedJson = """{"conf":{"start":"2013-06-24T23:00:00+0000","title":"big conference","partecipants":1000,"resourceName":"bigconf","price":1500.0}}"""
+        def expectedJson = """{"conf":{"start":"2013-06-24T22:00:00+0000","title":"big conference","partecipants":1000,"resourceName":"bigconf","price":1500.0}}"""
 
         jsonBuilder(conf: expensiveConf)
         def json = jsonBuilder.toString()

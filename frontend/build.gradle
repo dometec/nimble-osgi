@@ -10,7 +10,7 @@ jar {
 }
 
 dependencies{
-    compile 'org.eclipse.jetty.aggregate:jetty-all:8.1.9.v20130131'
+    compile 'org.eclipse.jetty.aggregate:jetty-all:9.2.7.v20150116'
     compile project(':interfaces')
 
 }
